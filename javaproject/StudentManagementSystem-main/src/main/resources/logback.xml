@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <!-- Console Appender -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Root Logger -->
+    <root level="INFO">
+        <appender-ref ref="CONSOLE" />
+    </root>
+
+    <!-- Hibernate SQL Logging (Optional - shows SQL queries) -->
+    <logger name="org.hibernate.SQL" level="DEBUG" />
+    <logger name="org.hibernate.type.descriptor.sql.BasicBinder" level="TRACE" />
+
+    <!-- Spring Framework Logging -->
+    <logger name="org.springframework" level="INFO" />
+
+    <!-- Your Application Logging -->
+    <logger name="com.studentmanagement" level="DEBUG" />
+
+</configuration>
+<!--        ```-->
+
+<!--        ### How to create it in IntelliJ:-->
+
+<!--        1. Right-click on **`src/main/resources`** folder-->
+<!--        2. **New → File**-->
+<!--        3. Name: `logback.xml`-->
+<!--        4. Paste the XML content above-->
+<!--        5. Save (Ctrl + S)-->
+
+<!--        -&#45;&#45;-->
+
+<!--        # 🔧 Fix 2: MySQL Database Connection Error-->
+
+<!--        The error shows:-->
+<!--        ```-->
+<!--        Access denied for user 'root'@'localhost' (using password: YES)-->
